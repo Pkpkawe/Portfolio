@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-primary: #6f45dd;
+  --color-primary-hover: #7b50e8;
+  --color-primary-active: #5230b7;
+
+  /* Purple */
+  --color-purple-deep: #5230b7;
+  --color-purple: #6f45dd;
+  --color-purple-bright: #7b50e8;
+
+  /* Violet */
+  --color-violet-night: #382056;
+  --color-violet-deep: #5230b7;
+  --color-violet: #6f45dd;
+  --color-violet-bright: #7b50e8;
+  --color-violet-electric: #8a5bea;
+
+  /* Lavender */
+  --color-lavender: #a88af0;
+  --color-lavender-light: #d4b5f8;
+  --color-lavender-mist: #f5effc;
+
+  /* Background */
+  --color-background: #f5effc;
+  --color-background-soft: #e7dded;
+  --color-surface: #ffffff;
+  --color-surface-soft: #fcf5ed;
+
+  /* Text */
+  --color-foreground: #181613;
+  --color-foreground-muted: #514b49;
+
+  /* Accent */
+  --color-accent: #234d35;
+  --color-accent-soft: #d4e5d9;
+
+  /* Character */
+  --color-hair: #553822;
+  --color-hair-dark: #2c1c11;
+  --color-skin: #edc9a7;
+  --color-skin-light: #f3d9bf;
+}
