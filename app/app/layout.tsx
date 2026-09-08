@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { NavbarTemplate } from "@/src/features/navbar/components/templates/NavbarTemplate";
 
 // Providers
-import { ThemeProvider } from '@/src/core/theme/contexts/ThemeProvider';
+import { ThemeProvider } from '@/src/core/theme/contexts/ThemeContext';
 import { FontProvider } from "@/src/core/fonts/providers/FontProvider";
 
 // CSS
