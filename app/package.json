@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
     "type-check": "tsc --noEmit",
-    "test": "vitest",
+    "test": "vitest run",
     "lint-staged": "lint-staged"
   },
   "dependencies": {

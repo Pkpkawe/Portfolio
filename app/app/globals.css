@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* Primary */
   --color-primary: #6f45dd;
@@ -42,4 +44,10 @@
   --color-hair-dark: #2c1c11;
   --color-skin: #edc9a7;
   --color-skin-light: #f3d9bf;
+
+  /* Fonts */
+  --font-monocraft: var(--font-monocraft);
+
+  /* Breakpoints */
+  --breakpoint-tg: 850px;
 }

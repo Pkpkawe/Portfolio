@@ -1,5 +1,14 @@
+// Next
 import type { Metadata } from "next";
-import { ReactNode } from "react";
+
+// Components
+import { NavbarTemplate } from "@/src/features/navbar/components/templates/NavbarTemplate";
+
+// Providers
+import { ThemeProvider } from '@/src/core/theme/contexts/ThemeContext';
+import { FontProvider } from "@/src/core/fonts/providers/FontProvider";
+
+// CSS
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,12 +16,21 @@ export const metadata: Metadata = {
   description: "Portfólio de Pkpkawe",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html
-      lang="pt-BR"
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="pt-BR">
+      <body suppressHydrationWarning>
+        <FontProvider>
+          <ThemeProvider>
+            <NavbarTemplate />
+            <main>{children}</main>
+          </ThemeProvider>
+        </FontProvider>
+      </body>
     </html>
   );
 }
