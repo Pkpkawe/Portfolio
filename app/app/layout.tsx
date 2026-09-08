@@ -1,19 +1,15 @@
 // Next
-import localFont from 'next/font/local'
 import type { Metadata } from "next";
 
 // Components
 import { NavbarTemplate } from "@/src/features/navbar/components/templates/NavbarTemplate";
 
+// Providers
+import { ThemeProvider } from '@/src/core/theme/contexts/ThemeProvider';
+import { FontProvider } from "@/src/core/fonts/providers/FontProvider";
+
 // CSS
 import "./globals.css";
-
-// Fonts
-const monocraft = localFont({
-  src: "../src/assets/fonts/Monocraft.ttf",
-  variable: "--font-monocraft",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Pkpkawe",
@@ -27,10 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${monocraft.variable}`} suppressHydrationWarning>
-        <NavbarTemplate />
-
-        <main>{children}</main>
+      <body suppressHydrationWarning>
+        <FontProvider>
+          <ThemeProvider>
+            <NavbarTemplate />
+            <main>{children}</main>
+          </ThemeProvider>
+        </FontProvider>
       </body>
     </html>
   );

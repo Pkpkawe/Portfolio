@@ -29,7 +29,8 @@ export function NavbarLink({ className = "", ...props }: NavbarLinkProps) {
         "after:transition-all",
         "after:duration-300",
         "after:ease-out",
-        "hover:after:w-[70%]",
+        "tg:hover:after:w-[70%]",
+        "hover:after:w-[90%]",
 
         "focus-visible:outline-none",
         "focus-visible:ring-2",

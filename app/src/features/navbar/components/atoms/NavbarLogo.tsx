@@ -13,7 +13,7 @@ export function NavbarLogo() {
         ].join(" ")}
       >
         <Image
-          src="/Portfolio/Main_Avatar.png"
+          src="/Main_Avatar.png"
           alt="Pkpkawe"
           fill
           priority

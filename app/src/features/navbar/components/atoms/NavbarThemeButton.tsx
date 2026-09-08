@@ -1,39 +1,18 @@
 "use client";
 
-import { useEffect } from "react";
 import { Moon, Sun } from "lucide-react";
-import { useDarkMode, useIsMounted } from "usehooks-ts";
+import { useTheme } from "@/src/core/theme/hooks/useTheme";
 
 export function NavbarThemeButton() {
-  const { isDarkMode, toggle } = useDarkMode({
-    initializeWithValue: false,
-  });
-
-  const isMounted = useIsMounted();
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDarkMode);
-  }, [isDarkMode]);
-
-  if (!isMounted()) {
-    return (
-      <button
-        type="button"
-        aria-label="Alterar tema"
-        className="flex size-9 items-center justify-center rounded-lg"
-      >
-        <Moon size={18} />
-      </button>
-    );
-  }
+  const { toggle } = useTheme();
 
   return (
     <button
       type="button"
       onClick={toggle}
-      aria-label={isDarkMode ? "Ativar modo claro" : "Ativar modo escuro"}
+      aria-label="Alternar tema"
       className="
-        flex size-9 items-center justify-center rounded-lg
+        relative flex size-9 items-center justify-center rounded-lg
         text-foreground-muted
         transition-colors duration-200
         hover:bg-lavender-mist
@@ -44,7 +23,23 @@ export function NavbarThemeButton() {
         cursor-pointer
       "
     >
-      {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+      <span
+        className={`
+          absolute inset-0 flex items-center justify-center transition-all duration-200
+          scale-100 opacity-100 dark:scale-0 dark:opacity-0"}
+        `}
+      >
+        <Sun size={18} />
+      </span>
+
+      <span
+        className={`
+          absolute inset-0 flex items-center justify-center transition-all duration-200
+          dark:scale-100 dark:opacity-100 scale-0 opacity-0"}
+        `}
+      >
+        <Moon size={18} />
+      </span>
     </button>
   );
 }
