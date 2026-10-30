@@ -1,39 +1,49 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
-    --color-indigo-light: #a182f5ff;
-    --color-indigo-soft: #8d74daff;
-    --color-indigo-normal: #6f45ddff;
-    --color-indigo-night: #5230b7ff;
-    --color-indigo-shadow: #29183fff;
+  --color-indigo-light: #a182f5ff;
+  --color-indigo-soft: #8d74daff;
+  --color-indigo-normal: #6f45ddff;
+  --color-indigo-night: #5230b7ff;
+  --color-indigo-shadow: #29183fff;
 
-    --color-violet-light: #8a5beaff;
-    --color-violet-soft: #b58eedff;
-    --color-violet-normal: #7b50e8ff;
-    --color-violet-night: #4824a8ff;
-    --color-violet-shadow: #2d1270ff;
+  --color-violet-light: #8a5beaff;
+  --color-violet-soft: #b58eedff;
+  --color-violet-normal: #7b50e8ff;
+  --color-violet-night: #4824a8ff;
+  --color-violet-shadow: #2d1270ff;
 
-    --color-mauve-light: #f2e2fbff;
-    --color-mauve-soft: #a88af0ff;
-    --color-mauve-normal: #a370c1ff;
-    --color-mauve-night: #5a3370ff;
-    --color-mauve-shadow: #382056ff;
+  --color-mauve-light: #f2e2fbff;
+  --color-mauve-soft: #a88af0ff;
+  --color-mauve-normal: #a370c1ff;
+  --color-mauve-night: #5a3370ff;
+  --color-mauve-shadow: #382056ff;
 
-    --color-iris-light: #e0d4fdff;
-    --color-iris-soft: #b39af5ff;
-    --color-iris-normal: #5d3fd3ff;
-    --color-iris-night: #3d2694ff;
-    --color-iris-shadow: #261661ff;
+  --color-iris-light: #e0d4fdff;
+  --color-iris-soft: #b39af5ff;
+  --color-iris-normal: #5d3fd3ff;
+  --color-iris-night: #3d2694ff;
+  --color-iris-shadow: #261661ff;
 
-    --color-periwinkle-light: #ece8ffff;
-    --color-periwinkle-soft: #d4b5f8ff;
-    --color-periwinkle-normal: #8f94f8ff;
-    --color-periwinkle-night: #8f94f8ff;
-    --color-periwinkle-shadow: #2e328aff;
+  --color-periwinkle-light: #ece8ffff;
+  --color-periwinkle-soft: #d4b5f8ff;
+  --color-periwinkle-normal: #8f94f8ff;
+  --color-periwinkle-night: #8f94f8ff;
+  --color-periwinkle-shadow: #2e328aff;
 
-    --color-lavender-light: #f5effcff;
-    --color-lavender-soft: #ebe5f3ff;
-    --color-lavender-normal: #b57edcff;
-    --color-lavender-night: #6b3b91ff;
-    --color-lavender-shadow: #3f1f58ff;
+  --color-lavender-light: #f5effcff;
+  --color-lavender-soft: #ebe5f3ff;
+  --color-lavender-normal: #b57edcff;
+  --color-lavender-night: #6b3b91ff;
+  --color-lavender-shadow: #3f1f58ff;
+
+  --font-monocraft: "Monocraft";
+}
+
+@font-face {
+  font-family: "Monocraft";
+  src: url("./assets/fonts/Monocraft.ttf");
+  font-style: normal;
 }
