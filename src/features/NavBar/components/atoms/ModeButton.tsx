@@ -16,10 +16,11 @@ const ModeButton = () => {
       onCheckedChange={toggle}
       className="
                 relative
-                w-13 h-7 bg-lavender-normal dark:bg-lavender-night
+                w-13 h-7 bg-mauve-soft dark:bg-lavender-night
                 outline-none
                 rounded-full
                 transition-colors duration-200
+                cursor-pointer
             "
     >
       <Switch.Thumb
@@ -32,7 +33,6 @@ const ModeButton = () => {
                     transition-transform duration-200
                     data-[state=checked]:translate-x-6
                     data-[state=unchecked]:translate-x-0
-                    cursor-pointer
                 "
       >
         {isDarkMode ? (
