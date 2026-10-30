@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "@fontsource/intel-one-mono";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -46,4 +48,9 @@
   font-family: "Monocraft";
   src: url("./assets/fonts/Monocraft.ttf");
   font-style: normal;
+}
+
+body {
+  background-color: var(--color-lavender-light);
+  font-family: "intel-one-mono", monospace;
 }
