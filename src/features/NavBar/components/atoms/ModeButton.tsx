@@ -33,6 +33,7 @@ const ModeButton = () => {
                     transition-transform duration-200
                     data-[state=checked]:translate-x-6
                     data-[state=unchecked]:translate-x-0
+                    hover:scale-104
                 "
       >
         {isDarkMode ? (

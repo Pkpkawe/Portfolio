@@ -4,6 +4,7 @@ import "./App.css";
 import NavBar from "./features/NavBar/components/organisms/NavBar";
 import MeshGradient from "./features/MeshGradient/components/organisms/MeshGradient";
 import Header from "./features/Header/components/organisms/Header";
+import Home from "./features/Home/components/organisms/Home";
 
 // UseHookTS
 import { useDarkMode } from "usehooks-ts";
@@ -24,6 +25,8 @@ function App() {
         <NavBar />
 
         <Header />
+
+        <Home />
       </div>
     </>
   );
