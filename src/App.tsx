@@ -5,6 +5,7 @@ import NavBar from "./features/NavBar/components/organisms/NavBar";
 import MeshGradient from "./features/MeshGradient/components/organisms/MeshGradient";
 import Header from "./features/Header/components/organisms/Header";
 import Home from "./features/Home/components/organisms/Home";
+import Knowledge from "./features/Knowledge/components/organisms/Knowledge";
 
 // UseHookTS
 import { useDarkMode } from "usehooks-ts";
@@ -26,7 +27,11 @@ function App() {
 
         <Header />
 
-        <Home />
+        <main className="w-4/5 flex flex-col items-center gap-100">
+          <Home />
+
+          <Knowledge />
+        </main>
       </div>
     </>
   );

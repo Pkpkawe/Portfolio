@@ -50,6 +50,10 @@
   font-style: normal;
 }
 
+@utility cursor-hover {
+  cursor: url("/cursor-hover.png"), pointer;
+}
+
 body {
   background-color: var(--color-lavender-light);
   font-family: "intel-one-mono", monospace;

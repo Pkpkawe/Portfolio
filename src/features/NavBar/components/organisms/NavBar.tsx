@@ -9,7 +9,7 @@ const NavBar = () => {
       className="
             z-100 fixed bg-lavender-light dark:bg-mauve-shadow
             flex items-center justify-between 
-            w-4/5 py-2 px-8 mt-5
+            w-4/5 py-2 px-10 mt-5
             border border-indigo-shadow dark:border-lavender-light rounded-2xl
             shadow-md
         "

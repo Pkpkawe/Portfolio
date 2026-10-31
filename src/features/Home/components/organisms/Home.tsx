@@ -8,15 +8,15 @@ import Avatar from "@/src/assets/images/logos/Main_Avatar.png";
 import { User } from "lucide-react";
 
 const LinkClassName =
-  "font-medium text-xl cursor-pointer w-1/2 p-5 rounded-2xl hover:scale-102 transition-all text-center no-underline border-4 shadow-md";
+  "font-medium text-xl cursor-pointer w-1/2 p-4 rounded-2xl hover:scale-102 transition-all text-center no-underline border-4 shadow-md";
 
 const Home = () => {
   return (
-    <section id="home" className="w-4/5 flex gap-15">
+    <section id="home" className="w-9/10 flex items-center gap-15">
       <img
         src={Avatar}
         alt="Avatar Pkpkawe"
-        className="w-1/3 rounded-3xl shadow-md"
+        className="h-full rounded-3xl shadow-md"
       />
 
       <div className="w-full p-4 flex flex-col gap-10 items-start justify-between">

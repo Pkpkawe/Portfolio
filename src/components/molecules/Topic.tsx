@@ -1,13 +1,13 @@
 import type { LucideIcon } from "lucide-react";
 
-type TTopic = {
+type TopicProps = {
   Title: string;
   Icon: LucideIcon;
 };
 
-const Topic = ({ Title, Icon }: TTopic) => {
+const Topic = ({ Title, Icon }: TopicProps) => {
   return (
-    <div className="inline-flex flex-col gap-5 items-stretch">
+    <div className="inline-flex flex-col gap-5 items-stretch self-start">
       <div className="ml-3 flex items-end gap-4 whitespace-nowrap">
         <Icon
           className="bg-periwinkle-soft text-indigo-night dark:text-indigo-normal rounded-xl p-2"
