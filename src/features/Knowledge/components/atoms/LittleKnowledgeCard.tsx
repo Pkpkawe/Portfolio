@@ -31,7 +31,7 @@ const LittleKnowledgeCard = ({
 
         ${
           isActive
-            ? "bg-periwinkle-light border-iris-normal/50 scale-105 shadow-xl dark:bg-iris-shadow dark:border-iris-soft/50 dark:shadow-iris-shadow/40"
+            ? "bg-periwinkle-light border-iris-normal/50 scale-105 shadow-xl dark:bg-iris-shadow/50 dark:border-iris-soft/50 dark:shadow-iris-shadow/40"
             : "bg-lavender-light border-periwinkle-shadow/15 hover:bg-periwinkle-light hover:border-iris-normal/50 shadow-md hover:-translate-y-1 hover:shadow-lg dark:bg-mauve-shadow dark:border-lavender-light/10 dark:hover:bg-iris-shadow/60 dark:hover:border-iris-soft/50 dark:shadow-black/20"
         }
       `}

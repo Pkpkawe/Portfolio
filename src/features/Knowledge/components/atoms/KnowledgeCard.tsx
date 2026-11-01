@@ -31,7 +31,7 @@ const KnowledgeCardVariants = {
     button:
       "bg-indigo-soft/60 hover:bg-indigo-soft dark:bg-indigo-normal/30 dark:hover:bg-indigo-normal/50 dark:text-indigo-light",
     icon: "text-indigo-shadow fill-indigo-shadow dark:text-indigo-light dark:fill-indigo-light",
-    background: "bg-indigo-soft/30 dark:bg-indigo-shadow",
+    background: "bg-indigo-soft/30 dark:bg-indigo-shadow/30",
   },
 
   violet: {
@@ -42,7 +42,7 @@ const KnowledgeCardVariants = {
     button:
       "bg-violet-soft/60 hover:bg-violet-soft dark:bg-violet-normal/30 dark:hover:bg-violet-normal/50 dark:text-violet-light",
     icon: "text-violet-shadow fill-violet-shadow dark:text-violet-light dark:fill-violet-light",
-    background: "bg-violet-soft/30 dark:bg-violet-shadow",
+    background: "bg-violet-soft/30 dark:bg-violet-shadow/30",
   },
 
   mauve: {
@@ -53,7 +53,7 @@ const KnowledgeCardVariants = {
     button:
       "bg-mauve-soft/60 hover:bg-mauve-soft dark:bg-mauve-normal/30 dark:hover:bg-mauve-normal/50 dark:text-mauve-light",
     icon: "text-mauve-shadow fill-mauve-shadow dark:text-mauve-light dark:fill-mauve-light",
-    background: "bg-mauve-soft/30 dark:bg-mauve-shadow",
+    background: "bg-mauve-soft/30 dark:bg-mauve-shadow/30",
   },
 
   iris: {
@@ -64,7 +64,7 @@ const KnowledgeCardVariants = {
     button:
       "bg-iris-soft/60 hover:bg-iris-soft dark:bg-iris-normal/30 dark:hover:bg-iris-normal/50 dark:text-iris-light",
     icon: "text-iris-shadow fill-iris-shadow dark:text-iris-light dark:fill-iris-light",
-    background: "bg-iris-soft/30 dark:bg-iris-shadow",
+    background: "bg-iris-soft/30 dark:bg-iris-shadow/30",
   },
 
   periwinkle: {
@@ -75,7 +75,7 @@ const KnowledgeCardVariants = {
     button:
       "bg-periwinkle-soft/60 hover:bg-periwinkle-soft dark:bg-periwinkle-normal/30 dark:hover:bg-periwinkle-normal/50 dark:text-periwinkle-light",
     icon: "text-periwinkle-shadow fill-periwinkle-shadow dark:text-periwinkle-light dark:fill-periwinkle-light",
-    background: "bg-periwinkle-light dark:bg-periwinkle-shadow",
+    background: "bg-periwinkle-light dark:bg-periwinkle-shadow/30",
   },
 
   lavender: {
@@ -86,7 +86,7 @@ const KnowledgeCardVariants = {
     button:
       "bg-lavender-normal/40 hover:bg-lavender-normal/60 dark:bg-lavender-normal/30 dark:hover:bg-lavender-normal/50 dark:text-lavender-light",
     icon: "text-lavender-shadow fill-lavender-shadow dark:text-lavender-light dark:fill-lavender-light",
-    background: "bg-lavender-normal/10 dark:bg-lavender-shadow",
+    background: "bg-lavender-normal/10 dark:bg-lavender-shadow/90",
   },
 } as const;
 
