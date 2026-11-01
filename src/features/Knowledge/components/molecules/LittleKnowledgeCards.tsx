@@ -7,13 +7,13 @@ import LittleKnowledgeCard from "../atoms/LittleKnowledgeCard";
 const LittleKnowledgeCards = () => {
   return (
     <div className="w-full grid grid-cols-7 justify-between gap-12">
-      {LittleKnowledgeCardData.map(({ id, Icon, Text, KnowledgeId }) => {
+      {LittleKnowledgeCardData.map((item) => {
         return (
           <LittleKnowledgeCard
-            key={id}
-            ParentKnowledgeId={KnowledgeId}
-            Icon={Icon}
-            Text={Text}
+            key={item.id}
+            ParentKnowledgeId={item.KnowledgeId}
+            Icon={item.Icon}
+            Text={item.Text}
           />
         );
       })}

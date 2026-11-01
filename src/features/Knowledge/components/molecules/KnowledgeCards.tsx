@@ -7,14 +7,16 @@ import KnowledgeCard from "../atoms/KnowledgeCard";
 const KnowledgeCards = () => {
   return (
     <div className="grid grid-cols-3 justify-between gap-15">
-      {KnowledgeCardData.map(({ id, BedgeText, Icon, Text }) => {
+      {KnowledgeCardData.map((item) => {
         return (
           <KnowledgeCard
-            key={id}
-            ID={id}
-            Icon={Icon}
-            Text={Text}
-            BedgeText={BedgeText}
+            key={item.id}
+            ID={item.id}
+            Icon={item.Icon}
+            Text={item.Text}
+            Description={item.Description}
+            BedgeText={item.BedgeText}
+            Color={item.color}
           />
         );
       })}

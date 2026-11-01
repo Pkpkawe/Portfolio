@@ -7,11 +7,11 @@ import Header from "./features/Header/components/organisms/Header";
 import Home from "./features/Home/components/organisms/Home";
 import Knowledge from "./features/Knowledge/components/organisms/Knowledge";
 
-// UseHookTS
-import { useDarkMode } from "usehooks-ts";
+// Hooks
+import { useTheme } from "./hooks/useTheme";
 
 function App() {
-  const { isDarkMode } = useDarkMode();
+  const { isDarkMode } = useTheme();
 
   return (
     <>
@@ -19,7 +19,7 @@ function App() {
 
       <div
         className={`
-          h-full w-full bg-lavender-light dark:bg-mauve-shadow flex flex-col items-center
+          h-full w-full bg-lavender-light dark:bg-mauve-shadow flex flex-col items-center overflow-hidden
           ${isDarkMode ? "dark" : ""}
         `}
       >

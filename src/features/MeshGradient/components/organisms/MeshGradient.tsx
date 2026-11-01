@@ -1,14 +1,14 @@
 // Constants
 import { customDarkConfig, customLightConfig } from "../constants/customConfig";
 
-// UseHookTS
-import { useDarkMode } from "usehooks-ts";
+// Hooks
+import { useTheme } from "@/src/hooks/useTheme";
 
 // CSS Mesh
 import { MeshGradient as MeshGradientModel } from "css-mesh";
 
 const MeshGradient = () => {
-  const { isDarkMode } = useDarkMode();
+  const { isDarkMode } = useTheme();
 
   return (
     <MeshGradientModel

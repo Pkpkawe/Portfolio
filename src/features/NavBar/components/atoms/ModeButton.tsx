@@ -1,14 +1,14 @@
 // Lucide Icons
 import { Sun, Moon } from "lucide-react";
 
-// UseHookTS
-import { useDarkMode } from "usehooks-ts";
+// Hooks
+import { useTheme } from "@/src/hooks/useTheme";
 
 // Radix-UI
 import { Switch } from "radix-ui";
 
 const ModeButton = () => {
-  const { isDarkMode, toggle } = useDarkMode();
+  const { isDarkMode, toggle } = useTheme();
 
   return (
     <Switch.Root
