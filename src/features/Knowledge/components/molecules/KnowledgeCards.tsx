@@ -11,12 +11,12 @@ const KnowledgeCards = () => {
         return (
           <KnowledgeCard
             key={item.id}
-            ID={item.id}
+            id={item.id}
             Icon={item.Icon}
-            Text={item.Text}
-            Description={item.Description}
-            BedgeText={item.BedgeText}
-            Color={item.color}
+            text={item.text}
+            description={item.description}
+            bedgeText={item.bedgeText}
+            color={item.color}
           />
         );
       })}

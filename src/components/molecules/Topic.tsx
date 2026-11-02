@@ -10,7 +10,7 @@ const Topic = ({ Title, Icon }: TopicProps) => {
     <div className="inline-flex flex-col gap-5 items-stretch self-start">
       <div className="ml-3 flex items-end gap-4 whitespace-nowrap">
         <Icon
-          className="bg-periwinkle-soft text-indigo-night dark:text-indigo-normal rounded-xl p-2"
+          className="bg-periwinkle-soft text-indigo-night dark:bg-mauve-night dark:text-lavender-light rounded-xl p-2"
           width={50}
           height={50}
         />
@@ -19,7 +19,7 @@ const Topic = ({ Title, Icon }: TopicProps) => {
         </h2>
       </div>
 
-      <div className="w-[calc(100%+200px)] h-1.5 bg-indigo-night dark:bg-indigo-normal rounded-full" />
+      <div className="w-[calc(100%+200px)] h-1.5 bg-indigo-night dark:bg-lavender-normal rounded-full" />
     </div>
   );
 };

@@ -24,33 +24,33 @@ import BashIcon from "@/src/assets/images/icons/Bash.svg?react";
 // Types
 import type { LucideIcon } from "lucide-react";
 
-type TLittleKnowledgeCard = {
+export type TLittleKnowledgeCard = {
   id: number;
   Icon: LucideIcon | React.FC<React.SVGProps<SVGSVGElement>>;
-  Text: string;
-  KnowledgeId: number;
+  text: string;
+  knowledgeId: number;
 };
 
 export const LittleKnowledgeCardData: TLittleKnowledgeCard[] = [
-  { id: 1, Icon: HTMLIcon, Text: "HTML", KnowledgeId: 1 },
-  { id: 2, Icon: JavaScriptIcon, Text: "JavaScript", KnowledgeId: 1 },
-  { id: 3, Icon: TypeScriptIcon, Text: "TypeScript", KnowledgeId: 1 },
-  { id: 4, Icon: ReactIcon, Text: "React", KnowledgeId: 1 },
-  { id: 5, Icon: NextIcon, Text: "Next", KnowledgeId: 1 },
-  { id: 6, Icon: CSSIcon, Text: "CSS", KnowledgeId: 1 },
-  { id: 7, Icon: TailwindCSSIcon, Text: "TailwindCSS", KnowledgeId: 1 },
-  { id: 8, Icon: PythonIcon, Text: "Python", KnowledgeId: 2 },
-  { id: 9, Icon: FastAPIIcon, Text: "FastAPI", KnowledgeId: 2 },
-  { id: 10, Icon: PostgresSQLIcon, Text: "PostgresSQL", KnowledgeId: 2 },
-  { id: 11, Icon: SQLite3Icon, Text: "SQLite3", KnowledgeId: 2 },
-  { id: 12, Icon: LinuxIcon, Text: "Linux", KnowledgeId: 3 },
-  { id: 13, Icon: WindowsIcon, Text: "Windows", KnowledgeId: 3 },
-  { id: 14, Icon: DockerIcon, Text: "Docker", KnowledgeId: 3 },
-  { id: 15, Icon: NginxIcon, Text: "Nginx", KnowledgeId: 3 },
-  { id: 16, Icon: KongIcon, Text: "Kong", KnowledgeId: 3 },
-  { id: 17, Icon: BashIcon, Text: "Bash", KnowledgeId: 3 },
-  { id: 18, Icon: FigmaIcon, Text: "Figma", KnowledgeId: 0 },
-  { id: 19, Icon: GitIcon, Text: "Git", KnowledgeId: 0 },
-  { id: 20, Icon: GitHubIcon, Text: "GitHub", KnowledgeId: 0 },
-  { id: 21, Icon: GitLabIcon, Text: "GitLub", KnowledgeId: 0 },
+  { id: 1, Icon: HTMLIcon, text: "HTML", knowledgeId: 1 },
+  { id: 2, Icon: JavaScriptIcon, text: "JavaScript", knowledgeId: 1 },
+  { id: 3, Icon: TypeScriptIcon, text: "TypeScript", knowledgeId: 1 },
+  { id: 4, Icon: ReactIcon, text: "React", knowledgeId: 1 },
+  { id: 5, Icon: NextIcon, text: "Next", knowledgeId: 1 },
+  { id: 6, Icon: CSSIcon, text: "CSS", knowledgeId: 1 },
+  { id: 7, Icon: TailwindCSSIcon, text: "TailwindCSS", knowledgeId: 1 },
+  { id: 8, Icon: PythonIcon, text: "Python", knowledgeId: 2 },
+  { id: 9, Icon: FastAPIIcon, text: "FastAPI", knowledgeId: 2 },
+  { id: 10, Icon: PostgresSQLIcon, text: "PostgresSQL", knowledgeId: 2 },
+  { id: 11, Icon: SQLite3Icon, text: "SQLite3", knowledgeId: 2 },
+  { id: 12, Icon: LinuxIcon, text: "Linux", knowledgeId: 3 },
+  { id: 13, Icon: WindowsIcon, text: "Windows", knowledgeId: 3 },
+  { id: 14, Icon: DockerIcon, text: "Docker", knowledgeId: 3 },
+  { id: 15, Icon: NginxIcon, text: "Nginx", knowledgeId: 3 },
+  { id: 16, Icon: KongIcon, text: "Kong", knowledgeId: 3 },
+  { id: 17, Icon: BashIcon, text: "Bash", knowledgeId: 3 },
+  { id: 18, Icon: FigmaIcon, text: "Figma", knowledgeId: 0 },
+  { id: 19, Icon: GitIcon, text: "Git", knowledgeId: 0 },
+  { id: 20, Icon: GitHubIcon, text: "GitHub", knowledgeId: 0 },
+  { id: 21, Icon: GitLabIcon, text: "GitLub", knowledgeId: 0 },
 ];

@@ -76,10 +76,11 @@ type BedgeTypes = keyof typeof BedgeVariants;
 
 type BedgeProps = {
   text: string;
+  textSize?: "text-xs" | "text-sm" | "text-lg";
   variant: BedgeTypes;
 };
 
-const Bedge = ({ text, variant }: BedgeProps) => {
+const Bedge = ({ text, variant, textSize = "text-xs" }: BedgeProps) => {
   return (
     <div
       className={`
@@ -88,7 +89,7 @@ const Bedge = ({ text, variant }: BedgeProps) => {
     border border-current/10
     dark:border-current/15
     px-4 py-1.5
-    text-xs font-semibold tracking-wide
+    ${textSize} font-semibold tracking-wide
     backdrop-blur-sm
     transition-colors duration-300
   `}

@@ -11,9 +11,10 @@ const LittleKnowledgeCards = () => {
         return (
           <LittleKnowledgeCard
             key={item.id}
-            ParentKnowledgeId={item.KnowledgeId}
+            id={item.id}
+            knowledgeId={item.knowledgeId}
             Icon={item.Icon}
-            Text={item.Text}
+            text={item.text}
           />
         );
       })}

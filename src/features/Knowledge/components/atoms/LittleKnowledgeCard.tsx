@@ -2,22 +2,18 @@
 import { useKnowledgeHoveringContext } from "../../hooks/useKnowledgeHoveringContext";
 
 // Types
-import type { LucideIcon } from "lucide-react";
+import type { TLittleKnowledgeCard } from "../../data/littleKnowledgeCardData";
 
-type LittleKnowledgeCardProps = {
-  ParentKnowledgeId: number;
-  Icon: LucideIcon | React.FC<React.SVGProps<SVGSVGElement>>;
-  Text: string;
-};
+type LittleKnowledgeCardProps = TLittleKnowledgeCard;
 
 const LittleKnowledgeCard = ({
-  ParentKnowledgeId,
+  knowledgeId: parentKnowledgeId,
   Icon,
-  Text,
+  text,
 }: LittleKnowledgeCardProps) => {
   const { knowledgeId } = useKnowledgeHoveringContext();
 
-  const isActive = knowledgeId === ParentKnowledgeId;
+  const isActive = knowledgeId === parentKnowledgeId;
 
   return (
     <div
@@ -71,7 +67,7 @@ const LittleKnowledgeCard = ({
           }
         `}
       >
-        {Text}
+        {text}
       </span>
     </div>
   );

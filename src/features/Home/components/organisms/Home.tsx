@@ -8,7 +8,7 @@ import Avatar from "@/src/assets/images/logos/Main_Avatar.png";
 import { User } from "lucide-react";
 
 const LinkClassName =
-  "font-medium text-xl cursor-pointer w-1/2 p-4 rounded-2xl hover:scale-102 transition-all text-center no-underline border-4 shadow-md hover:shadow-xl";
+  "font-medium text-xl cursor-pointer w-1/2 p-4 rounded-2xl hover:scale-102 transition-all text-center no-underline border-2 shadow-md hover:shadow-xl";
 
 const Home = () => {
   return (

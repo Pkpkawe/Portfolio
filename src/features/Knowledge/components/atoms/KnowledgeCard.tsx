@@ -11,16 +11,9 @@ import { useKnowledgeHoveringContext } from "../../hooks/useKnowledgeHoveringCon
 import { useHover } from "usehooks-ts";
 
 // Types
-import type { LucideIcon } from "lucide-react";
+import type { TKnowledgeCard } from "../../data/knowledgeCardData";
 
-type KnowledgeCardProps = {
-  ID: number;
-  Icon: LucideIcon | React.FC<React.SVGProps<SVGSVGElement>>;
-  Text: string;
-  BedgeText: string;
-  Description: string;
-  Color: "indigo" | "violet" | "mauve" | "iris" | "periwinkle" | "lavender";
-};
+type KnowledgeCardProps = TKnowledgeCard;
 
 const KnowledgeCardVariants = {
   indigo: {
@@ -91,22 +84,22 @@ const KnowledgeCardVariants = {
 } as const;
 
 const KnowledgeCard = ({
-  ID,
+  id,
   Icon,
-  Text,
-  Description,
-  BedgeText,
-  Color,
+  text,
+  description,
+  bedgeText,
+  color,
 }: KnowledgeCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isHover = useHover(cardRef as React.RefObject<HTMLElement>);
   const { setKnowledgeId } = useKnowledgeHoveringContext();
 
-  const variant = KnowledgeCardVariants[Color];
+  const variant = KnowledgeCardVariants[color];
 
   useEffect(() => {
-    setKnowledgeId(isHover ? ID : null);
-  }, [isHover, setKnowledgeId, ID]);
+    setKnowledgeId(isHover ? id : null);
+  }, [isHover, setKnowledgeId, id]);
 
   return (
     <div
@@ -121,12 +114,12 @@ const KnowledgeCard = ({
     `}
     >
       <div className="flex flex-col justify-between gap-5">
-        <Bedge text={BedgeText} variant={variant.badge} />
+        <Bedge text={bedgeText} variant={variant.badge} />
 
         <div className="flex flex-col gap-2">
-          <h3 className={`text-4xl ${variant.title} font-bold`}>{Text}</h3>
+          <h3 className={`text-4xl ${variant.title} font-bold`}>{text}</h3>
           <p className="text-slate-600 dark:text-lavender-light text-sm">
-            {Description}
+            {description}
           </p>
         </div>
 

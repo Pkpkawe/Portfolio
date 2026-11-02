@@ -12,9 +12,9 @@ export type KnowledgeColor =
 export type TKnowledgeCard = {
   id: number;
   Icon: LucideIcon | React.FC<React.SVGProps<SVGSVGElement>>;
-  Text: string;
-  Description: string;
-  BedgeText: string;
+  text: string;
+  description: string;
+  bedgeText: string;
   color: KnowledgeColor;
 };
 
@@ -22,28 +22,28 @@ export const KnowledgeCardData: TKnowledgeCard[] = [
   {
     id: 1,
     Icon: FrontendIcon,
-    Text: "Frontend",
-    Description:
+    text: "Frontend",
+    description:
       "Desenvolvimento de interfaces modernas, interativas e acessíveis.",
-    BedgeText: "Desenvolvedor",
+    bedgeText: "Desenvolvedor",
     color: "periwinkle",
   },
   {
     id: 2,
     Icon: BackendIcon,
-    Text: "Backend",
-    Description:
+    text: "Backend",
+    description:
       "Construção de APIs, regras de negócio e gerenciamento de dados.",
-    BedgeText: "Desenvolvedor",
+    bedgeText: "Desenvolvedor",
     color: "iris",
   },
   {
     id: 3,
     Icon: DevopsIcon,
-    Text: "DevOps",
-    Description:
+    text: "DevOps",
+    description:
       "Automação, infraestrutura e integração contínua de aplicações.",
-    BedgeText: "Desenvolvedor",
+    bedgeText: "Desenvolvedor",
     color: "lavender",
   },
 ];
