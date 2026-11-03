@@ -21,9 +21,10 @@ const SmallProject = ({
     <div
       className="
             w-full h-full flex flex-col gap-5 p-8 rounded-4xl overflow-hidden
-            bg-lavender-soft hover:bg-periwinkle-light dark:bg-lavender-normal/10 dark:hover:bg-lavender-normal/15
+            bg-lavender-soft hover:bg-violet-normal/10 dark:bg-lavender-normal/15 dark:hover:bg-lavender-soft/5
             border border-periwinkle-soft/40 dark:border-periwinkle-normal/30
-            shadow-md cursor-hover transition-all
+            shadow-md cursor-hover
+            hover:-translate-1 hover:scale-101 hover:shadow-lg transition-all
         "
     >
       <img

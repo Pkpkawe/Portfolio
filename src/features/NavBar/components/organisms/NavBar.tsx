@@ -1,5 +1,5 @@
 // Components
-import Avatar from "../molecules/Avatar";
+import Avatar from "@/src/components/molecules/Avatar";
 import NavigationMenu from "../molecules/NavigationMenu";
 import ModeButton from "../atoms/ModeButton";
 

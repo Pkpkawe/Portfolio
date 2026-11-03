@@ -77,7 +77,7 @@ export function EmblaCarousel({ children, options }: EmblaCarouselProps) {
           {Children.toArray(children).map((child, index) => (
             <div
               key={index}
-              className="flex min-w-0 shrink-0 grow-0 basis-full pl-4 md:basis-1/2"
+              className="flex min-w-0 shrink-0 grow-0 basis-full p-4 md:basis-1/2"
             >
               {child}
             </div>
