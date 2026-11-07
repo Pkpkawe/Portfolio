@@ -30,7 +30,7 @@ const SmallProject = ({
       <img
         src={image}
         alt={name + "_image"}
-        className="w-full aspect-3/2 object-cover rounded-3xl"
+        className="w-full aspect-3/2 rounded-3xl object-cover object-center"
       />
 
       <ProjectLink href={href} />

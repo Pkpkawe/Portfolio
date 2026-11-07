@@ -30,7 +30,7 @@ const LargeProject = ({
       <img
         src={image}
         alt={name + "_image"}
-        className="aspect-3/2 w-4/7 rounded-4xl"
+        className="aspect-3/2 w-4/7 rounded-4xl object-cover object-center"
       />
 
       <div className="w-full flex flex-col justify-between px-15 py-20">

@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer
       className="
-            w-full mt-50 py-10 px-30
+            w-full mt-100 py-10 px-30
             border-t border-mauve-shadow dark:border-lavender-light
             flex flex-col items-center gap-20
         "

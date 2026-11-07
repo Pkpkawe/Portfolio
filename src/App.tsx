@@ -7,6 +7,7 @@ import Header from "./features/Header/components/organisms/Header";
 import Home from "./features/Home/components/organisms/Home";
 import Knowledge from "./features/Knowledge/components/organisms/Knowledge";
 import Projects from "./features/Projects/components/organisms/Projects";
+import Journey from "./features/Journey/components/organisms/Journey";
 import Footer from "./features/Footer/components/organisms/Footer";
 
 // Hooks
@@ -35,6 +36,8 @@ function App() {
           <Knowledge />
 
           <Projects />
+
+          <Journey />
         </main>
 
         <Footer />

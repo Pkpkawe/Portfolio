@@ -1,0 +1,129 @@
+// React
+import { useEffect, useRef, useState, useCallback } from "react";
+import { type SetStateAction, type Dispatch } from "react";
+
+// UseHookTS
+import { useIntersectionObserver, useEventListener } from "usehooks-ts";
+
+// Components
+import Bedge from "@/src/components/atoms/Bedge";
+import JourneyContent from "../atoms/JourneyContent";
+import JourneyMarker from "../atoms/JourneyMarker";
+
+// Types
+import type { TJourneyExperiences } from "../../data/experiences";
+
+type JourneyItemProps = TJourneyExperiences & {
+  index: number;
+  activeIndex: number;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
+  title: string;
+  category: string;
+  isLast: boolean;
+};
+
+const JourneyItem = ({
+  id,
+  title,
+  description,
+  period,
+  category,
+  image,
+  knowledges,
+  activeIndex,
+  index,
+  isLast,
+  setActiveIndex,
+}: JourneyItemProps) => {
+  const contentRef = useRef<HTMLDivElement>(null);
+  const itemRef = useRef<HTMLElement | null>(null);
+
+  const [progress, setProgress] = useState(0);
+
+  const { isIntersecting, ref } = useIntersectionObserver({
+    rootMargin: "-50% 0px -50% 0px",
+    threshold: 0,
+  });
+
+  const setRefs = useCallback(
+    (node: HTMLElement | null) => {
+      itemRef.current = node;
+      ref(node);
+    },
+    [ref],
+  );
+
+  useEventListener("scroll", () => {
+    const rect = itemRef.current?.getBoundingClientRect();
+
+    if (!rect) return;
+
+    const value = (window.innerHeight / 2 - rect.top) / rect.height;
+
+    setProgress(Math.min(1, Math.max(0, value)));
+  });
+
+  const isActive = activeIndex === index;
+  const isCompleted = activeIndex > index;
+
+  useEffect(() => {
+    if (isIntersecting) {
+      setActiveIndex(index);
+    }
+  }, [isIntersecting, index, setActiveIndex]);
+
+  return (
+    <article
+      ref={setRefs}
+      className="flex items-stretch justify-between gap-20"
+    >
+      <JourneyMarker
+        isActive={isActive}
+        isCompleted={isCompleted}
+        hasConnector={!isLast}
+        progress={progress}
+      />
+
+      <div className="flex min-w-0 flex-4 flex-col gap-3">
+        <div
+          className={`flex items-center gap-5 ${!isActive && "opacity-45"} transition-all`}
+        >
+          <h3 className="text-indigo-shadow dark:text-lavender-light text-3xl font-bold">
+            {title}
+          </h3>
+
+          <div className="size-1.5 rounded-full bg-lavender-normal/40 dark:bg-mauve-soft/70" />
+
+          <Bedge text={category.toUpperCase()} variant="periwinkle-soft" />
+        </div>
+
+        <div
+          ref={contentRef}
+          aria-hidden={!isActive}
+          className={`
+                        grid transition-all duration-500 ease-in-out
+                        ${
+                          isActive
+                            ? "grid-rows-[1fr] translate-y-0 opacity-100"
+                            : "grid-rows-[0fr] -translate-y-2.5 opacity-0"
+                        }
+                `}
+        >
+          <div className="min-h-10 overflow-hidden flex justify-between gap-15">
+            <JourneyContent
+              key={id}
+              id={id}
+              title={title}
+              description={description}
+              period={period}
+              image={image}
+              knowledges={knowledges}
+            />
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+};
+
+export default JourneyItem;
