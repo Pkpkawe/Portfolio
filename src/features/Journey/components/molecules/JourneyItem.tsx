@@ -41,8 +41,8 @@ const JourneyItem = ({
   const [progress, setProgress] = useState(0);
 
   const { isIntersecting, ref } = useIntersectionObserver({
-    rootMargin: "-50% 0px -50% 0px",
-    threshold: 0,
+    rootMargin: "-50% 0px -25% 0px",
+    threshold: 0.1,
   });
 
   const setRefs = useCallback(
@@ -53,18 +53,18 @@ const JourneyItem = ({
     [ref],
   );
 
-  useEventListener("scroll", () => {
-    const rect = itemRef.current?.getBoundingClientRect();
+  const isActive = activeIndex === index;
+  const isCompleted = activeIndex > index;
 
+  useEventListener("scroll", () => {
+    if (!isIntersecting && !isActive && !isCompleted) return;
+
+    const rect = itemRef.current?.getBoundingClientRect();
     if (!rect) return;
 
     const value = (window.innerHeight / 2 - rect.top) / rect.height;
-
     setProgress(Math.min(1, Math.max(0, value)));
   });
-
-  const isActive = activeIndex === index;
-  const isCompleted = activeIndex > index;
 
   useEffect(() => {
     if (isIntersecting) {
@@ -109,7 +109,7 @@ const JourneyItem = ({
                         }
                 `}
         >
-          <div className="min-h-10 overflow-hidden flex justify-between gap-15">
+          <div className="min-h-40 overflow-hidden flex justify-between gap-15">
             <JourneyContent
               key={id}
               id={id}

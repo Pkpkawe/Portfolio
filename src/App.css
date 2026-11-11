@@ -54,6 +54,10 @@
   cursor: url("/cursor-hover.png"), pointer;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-lavender-light);
   font-family: "intel-one-mono", monospace;
