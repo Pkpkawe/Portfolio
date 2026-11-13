@@ -44,7 +44,7 @@ const NavBar = () => {
   useEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+    if (currentScrollY > lastScrollY.current && currentScrollY > 600) {
       setIsVisibleFalse();
       setIsVisibleLittleMenuFalse();
     } else {

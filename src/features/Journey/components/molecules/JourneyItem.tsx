@@ -75,7 +75,7 @@ const JourneyItem = ({
   return (
     <article
       ref={setRefs}
-      className="flex items-stretch justify-between gap-20"
+      className="flex items-stretch justify-between sm:gap-20 gap-10"
     >
       <JourneyMarker
         isActive={isActive}
@@ -86,13 +86,13 @@ const JourneyItem = ({
 
       <div className="flex min-w-0 flex-4 flex-col gap-3">
         <div
-          className={`flex items-center gap-5 ${!isActive && "opacity-45"} transition-all`}
+          className={`flex sm:flex-row flex-col-reverse sm:items-center sm:gap-5 gap-2 ${!isActive && "opacity-45"} transition-all`}
         >
-          <h3 className="text-indigo-shadow dark:text-lavender-light text-3xl font-bold">
+          <h3 className="text-indigo-shadow dark:text-lavender-light text-[clamp(1.2rem,1.5vw,4rem)] font-bold">
             {title}
           </h3>
 
-          <div className="size-1.5 rounded-full bg-lavender-normal/40 dark:bg-mauve-soft/70" />
+          <div className="sm:block hidden size-1.5 rounded-full bg-lavender-normal/40 dark:bg-mauve-soft/70" />
 
           <Bedge text={category.toUpperCase()} variant="periwinkle-soft" />
         </div>
@@ -109,17 +109,15 @@ const JourneyItem = ({
                         }
                 `}
         >
-          <div className="min-h-40 overflow-hidden flex justify-between gap-15">
-            <JourneyContent
-              key={id}
-              id={id}
-              title={title}
-              description={description}
-              period={period}
-              image={image}
-              knowledges={knowledges}
-            />
-          </div>
+          <JourneyContent
+            key={id}
+            id={id}
+            title={title}
+            description={description}
+            period={period}
+            image={image}
+            knowledges={knowledges}
+          />
         </div>
       </div>
     </article>

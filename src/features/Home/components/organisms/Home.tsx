@@ -52,7 +52,7 @@ const Home = () => {
 
         <div className="w-full flex justify-between gap-8">
           <a
-            href=""
+            href="mailto:kawepietro50third@exemplo.com"
             target="_blank"
             className={`
                         ${LinkClassName} 
