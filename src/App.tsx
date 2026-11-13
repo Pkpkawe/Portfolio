@@ -30,7 +30,7 @@ function App() {
 
         <Header />
 
-        <main className="w-4/5 flex flex-col items-center gap-100">
+        <main className="xl:w-4/5 w-5/6 flex flex-col items-center gap-100">
           <Home />
 
           <Knowledge />

@@ -3,10 +3,15 @@ import Bedge from "@/src/components/atoms/Bedge";
 import ProjectStatus from "../atoms/ProjectStatus";
 import ProjectLink from "../atoms/ProjectLink";
 
+// UseHookTS
+import { useWindowSize } from "usehooks-ts";
+
 // Types
 import type { TProject } from "../../data/projectsData";
 
-type SmallProjectProps = Omit<TProject, "size" | "id">;
+type SmallProjectProps = Omit<TProject, "size" | "id"> & {
+  isActive: boolean;
+};
 
 const SmallProject = ({
   name,
@@ -16,16 +21,20 @@ const SmallProject = ({
   type,
   href,
   status,
+  isActive = false,
 }: SmallProjectProps) => {
+  const { width } = useWindowSize();
+
   return (
     <div
-      className="
-            w-full h-full flex flex-col gap-5 p-8 rounded-4xl overflow-hidden
-            bg-lavender-soft hover:bg-violet-normal/10 dark:bg-lavender-normal/15 dark:hover:bg-lavender-soft/5
+      className={`
+            w-full h-full flex flex-col gap-5 sm:p-8 p-3 rounded-4xl overflow-hidden
+            bg-lavender-soft dark:bg-lavender-normal/15 
             border border-periwinkle-soft/40 dark:border-periwinkle-normal/30
             shadow-md cursor-hover
-            hover:-translate-1 hover:scale-101 hover:shadow-lg transition-all
-        "
+            transition-all duration-700
+            ${isActive ? "-translate-1 scale-101 shadow-lg! bg-violet-normal/10! dark:bg-lavender-soft/5!" : "scale-70"}
+      `}
     >
       <img
         src={image}
@@ -33,30 +42,29 @@ const SmallProject = ({
         className="w-full aspect-3/2 rounded-3xl object-cover object-center"
       />
 
-      <ProjectLink href={href} />
+      {(width >= 1024 || width < 640) && <ProjectLink href={href} />}
 
-      <div className="w-full flex items-center justify-between gap-3">
-        <div className="flex gap-5">
-          <h3 className="text-2xl font-semibold text-shadow-mauve-shadow dark:text-lavender-light">
-            {name}
-          </h3>
-          <Bedge text={type} variant="iris-soft" />
+      <div className="w-full flex flex-row items-center justify-between gap-3">
+        <div className="flex gap-3 lg:justify-between sm:justify-start justify-between lg:w-full sm:w-auto w-full">
+          <div className="flex justify-between gap-5">
+            <h3 className="text-[clamp(1.2rem,1.2vw,2rem)] font-semibold text-shadow-mauve-shadow dark:text-lavender-light">
+              {name}
+            </h3>
+            <Bedge text={type} variant="iris-light" />
+          </div>
+          <ProjectStatus status={status} />
         </div>
-
-        <ProjectStatus status={status} />
+        {width < 1024 && width >= 640 && <ProjectLink href={href} />}
       </div>
-
-      <p className="text-justify font-light leading-relaxed dark:text-mauve-light">
+      <p className="text-[clamp(0.8rem,1vw,2rem)] text-justify font-light leading-relaxed dark:text-mauve-light">
         {description}
       </p>
-
       <div className="flex gap-3 flex-wrap">
         {technologies.map((technology) => (
           <Bedge
             key={technology}
             text={technology.toUpperCase()}
             variant="mauve-shadow"
-            textSize="text-sm"
           />
         ))}
       </div>

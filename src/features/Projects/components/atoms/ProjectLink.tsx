@@ -1,10 +1,15 @@
+// Lucide Icons
 import { ArrowUpRight } from "lucide-react";
+
+// UseHookTS
+import { useWindowSize } from "usehooks-ts";
 
 type ProjectLinkProps = {
   href: string;
 };
 
 const ProjectLink = ({ href }: ProjectLinkProps) => {
+  const { width } = useWindowSize();
   return (
     <a
       href={href}
@@ -12,9 +17,9 @@ const ProjectLink = ({ href }: ProjectLinkProps) => {
       rel="noopener noreferrer"
       className="
         group
-        w-full
+        lg:w-full sm:w-fit w-full h-fit
         inline-flex items-center justify-center gap-2
-        px-5 py-2.5
+        md:px-5 p-2.5
         rounded-xl
         bg-iris-night text-lavender-light
         border border-iris-normal/30
@@ -38,7 +43,7 @@ const ProjectLink = ({ href }: ProjectLinkProps) => {
           group-hover:-translate-y-0.5
         "
       />
-      Ver projeto
+      {(width >= 1024 || width < 640) && "Ver projeto"}
     </a>
   );
 };

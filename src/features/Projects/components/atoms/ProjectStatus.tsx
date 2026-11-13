@@ -1,4 +1,8 @@
+// Lucide Icons
 import { CheckCircle2, Code2 } from "lucide-react";
+
+// UseHookTS
+import { useWindowSize } from "usehooks-ts";
 
 export type ProjectStatusType = "development" | "completed";
 
@@ -30,6 +34,7 @@ const statusVariants = {
 
 const ProjectStatus = ({ status }: ProjectStatusProps) => {
   const { text, Icon, className } = statusVariants[status];
+  const { width } = useWindowSize();
 
   return (
     <span
@@ -37,12 +42,12 @@ const ProjectStatus = ({ status }: ProjectStatusProps) => {
                 inline-flex items-center gap-2
                 w-fit px-3 py-1.5
                 rounded-full border
-                text-xs font-semibold tracking-wide
+                text-[clamp(0.6rem,0.7vw,1.5rem)] font-semibold tracking-wide
                 ${className}
         `}
     >
       <Icon className="w-3.5 h-3.5" />
-      {text}
+      {width >= 1280 && text}
     </span>
   );
 };

@@ -4,6 +4,9 @@ import LargeProject from "../molecules/LargeProject";
 import SmallProject from "../molecules/SmallProject";
 import EmblaCarousel from "@/src/components/molecules/EmblaCarousel";
 
+// React
+import { useState } from "react";
+
 // Lucide Icons
 import { Folder, Ghost } from "lucide-react";
 
@@ -11,6 +14,8 @@ import { Folder, Ghost } from "lucide-react";
 import { ProjectsData } from "../../data/projectsData";
 
 const Projects = () => {
+  const [activeIndexSmallProject, setActiveIndexSmallProject] = useState(0);
+
   const hasProjects = ProjectsData.length !== 0;
   const hasProjectLarge = ProjectsData.some(
     (project) => project.size === "large",
@@ -88,9 +93,9 @@ const Projects = () => {
             )}
 
             {hasProjectSmall && (
-              <EmblaCarousel>
+              <EmblaCarousel onSelect={setActiveIndexSmallProject}>
                 {ProjectsData.filter((project) => project.size === "small").map(
-                  (project) => {
+                  (project, index) => {
                     return (
                       <SmallProject
                         key={project.id}
@@ -101,6 +106,7 @@ const Projects = () => {
                         technologies={project.technologies}
                         href={project.href}
                         status={project.status}
+                        isActive={index === activeIndexSmallProject}
                       />
                     );
                   },

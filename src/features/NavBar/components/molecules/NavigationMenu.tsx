@@ -6,17 +6,17 @@ import NavBarLinks from "../../data/navBarLinks";
 
 const NavigationMenu = () => {
   return (
-    <NavigationMenuRadix.Root className="flex gap-15 list-none">
+    <NavigationMenuRadix.Root className="flex xl:flex-row flex-col xl:gap-15 gap-7 list-none">
       {NavBarLinks.map((link) => {
         return (
           <NavigationMenuRadix.Item
             key={link.id}
-            className="relative group flex flex-col items-center"
+            className="relative group flex flex-col xl:items-center"
           >
             <NavigationMenuRadix.Link
               href={link.href}
               className="
-                                font-medium
+                                font-medium text-[clamp(0.9rem,1vw,1.5rem)]
                                 text-indigo-shadow dark:text-lavender-light 
                                 group-hover:text-violet-normal group-hover:dark:text-white
                             "

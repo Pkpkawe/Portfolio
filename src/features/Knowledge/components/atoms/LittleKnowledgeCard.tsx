@@ -19,7 +19,7 @@ const LittleKnowledgeCard = ({
     <div
       className={`
         group
-        w-full aspect-square p-4
+        w-full min-w-25 min-h-25 md:min-w-37.5 aspect-square p-4
         flex flex-col justify-between items-center gap-5
         rounded-3xl border
         transition-all duration-300 ease-out
@@ -35,7 +35,7 @@ const LittleKnowledgeCard = ({
       <div
         className={`
           flex items-center justify-center
-          w-16 h-16 rounded-2xl
+          aspect-square h-3/5 rounded-2xl
           transition-all duration-300
           group-hover:bg-white/60 group-hover:shadow-sm group-hover:scale-110
           dark:group-hover:bg-white/10
@@ -44,7 +44,7 @@ const LittleKnowledgeCard = ({
       >
         <Icon
           className={`
-            w-9 h-9
+            w-3/5 aspect-square h-full
             text-iris-night dark:text-iris-light
             transition-all duration-300
             ${isActive ? "scale-120" : "group-hover:scale-120"}
@@ -54,7 +54,7 @@ const LittleKnowledgeCard = ({
 
       <span
         className={`
-          text-xs sm:text-sm font-semibold
+          md:text-[clamp(0.9rem,1vw,1.5rem)] text-[clamp(0.7rem,1vw,2rem)] font-semibold
           px-4 py-1.5 rounded-full
           border
           transition-all duration-300

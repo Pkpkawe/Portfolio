@@ -15,7 +15,7 @@ type InfoBlockProps = {
 const InfoBlock = ({ name, infos }: InfoBlockProps) => {
   return (
     <div className="flex flex-col gap-4">
-      <span className="font-semibold text-mauve-shadow dark:text-lavender-light">
+      <span className="text-[clamp(0.8rem,1vw,2rem)] font-semibold text-mauve-shadow dark:text-lavender-light">
         {name.toUpperCase()}
       </span>
       <ul className="flex flex-col gap-3">
@@ -23,9 +23,9 @@ const InfoBlock = ({ name, infos }: InfoBlockProps) => {
           <li>
             <a href={info.href} className="flex items-center gap-3 group">
               <div className="p-1 rounded-md bg-periwinkle-soft/50 dark:bg-lavender-light/20 group-hover:bg-periwinkle-soft/70 darkgroup-hover:bg-lavender-light/50 transition-all">
-                <info.Icon className="text-[1.1vw] text-mauve-shadow dark:text-lavender-light" />
+                <info.Icon className="text-[1.3vw] text-mauve-shadow dark:text-lavender-light" />
               </div>
-              <span className="text-mauve-shadow dark:text-lavender-light group-hover:font-medium transition-all">
+              <span className="text-[clamp(0.7rem,1vw,2rem)] text-mauve-shadow dark:text-lavender-light group-hover:font-medium transition-all">
                 {info.text}
               </span>
             </a>

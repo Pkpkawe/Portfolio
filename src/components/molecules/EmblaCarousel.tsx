@@ -1,14 +1,23 @@
 import { Children, useCallback, useSyncExternalStore } from "react";
-import type { ReactNode } from "react";
+import {
+  type SetStateAction,
+  type Dispatch,
+  type ReactNode,
+  useEffect,
+} from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import type { EmblaOptionsType } from "embla-carousel";
 
 // Lucide Icons
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// UseHookTS
+import { useWindowSize } from "usehooks-ts";
+
 type EmblaCarouselProps = {
   children: ReactNode;
   options?: EmblaOptionsType;
+  onSelect: Dispatch<SetStateAction<number>>;
 };
 
 const buttonClassName = `
@@ -22,7 +31,12 @@ const buttonClassName = `
     dark:border-iris-soft/30 dark:hover:bg-iris-soft
 `;
 
-export function EmblaCarousel({ children, options }: EmblaCarouselProps) {
+export function EmblaCarousel({
+  children,
+  options,
+  onSelect,
+}: EmblaCarouselProps) {
+  const { width } = useWindowSize();
   const slides = Children.toArray(children);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -60,6 +74,65 @@ export function EmblaCarousel({ children, options }: EmblaCarouselProps) {
   const goToPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const goToNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
+  const handleSelect = useCallback(() => {
+    if (!emblaApi) return;
+
+    onSelect?.(emblaApi.selectedScrollSnap());
+  }, [emblaApi, onSelect]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    handleSelect();
+
+    emblaApi.on("select", handleSelect);
+
+    return () => {
+      emblaApi.off("select", handleSelect);
+    };
+  }, [emblaApi, handleSelect]);
+
+  if (width < 768) {
+    return (
+      <div className="w-full flex flex-col gap-4">
+        <div className="flex-1 min-w-0 overflow-hidden" ref={emblaRef}>
+          <div className="flex">
+            {Children.toArray(children).map((child, index) => (
+              <div
+                key={index}
+                className="flex md:min-w-110 sm:min-w-70 min-w-50 shrink-0 grow-0 basis-full p-4 md:basis-1/2"
+              >
+                {child}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center gap-15">
+          <button
+            type="button"
+            onClick={goToPrev}
+            disabled={!canScrollPrev}
+            aria-label="Anterior"
+            className={buttonClassName}
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+
+          <button
+            type="button"
+            onClick={goToNext}
+            disabled={!canScrollNext}
+            aria-label="Próximo"
+            className={buttonClassName}
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="w-full flex gap-4">
       <button
@@ -77,7 +150,7 @@ export function EmblaCarousel({ children, options }: EmblaCarouselProps) {
           {Children.toArray(children).map((child, index) => (
             <div
               key={index}
-              className="flex min-w-0 shrink-0 grow-0 basis-full p-4 md:basis-1/2"
+              className="flex md:min-w-110 sm:min-w-70 min-w-50 shrink-0 grow-0 basis-full p-4 md:basis-1/2"
             >
               {child}
             </div>

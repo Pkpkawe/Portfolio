@@ -9,6 +9,7 @@ import { useKnowledgeHoveringContext } from "../../hooks/useKnowledgeHoveringCon
 
 // useHooksTS
 import { useHover } from "usehooks-ts";
+import { useWindowSize } from "usehooks-ts";
 
 // Types
 import type { TKnowledgeCard } from "../../data/knowledgeCardData";
@@ -93,6 +94,7 @@ const KnowledgeCard = ({
 }: KnowledgeCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isHover = useHover(cardRef as React.RefObject<HTMLElement>);
+  const { width } = useWindowSize();
   const { setKnowledgeId } = useKnowledgeHoveringContext();
 
   const variant = KnowledgeCardVariants[color];
@@ -105,7 +107,7 @@ const KnowledgeCard = ({
     <div
       className={`
         group w-full flex items-center justify-between gap-6
-        p-6 border-2 rounded-4xl
+        p-6 border-2 rounded-4xl content-box
         ${variant.border}
         ${variant.background}
         shadow-md
@@ -113,12 +115,29 @@ const KnowledgeCard = ({
         hover:-translate-y-1 hover:shadow-xl
     `}
     >
-      <div className="flex flex-col justify-between gap-5">
+      <div className="flex flex-col 2xl:items-start lg:items-center justify-between gap-5">
         <Bedge text={bedgeText} variant={variant.badge} />
 
-        <div className="flex flex-col gap-2">
-          <h3 className={`text-4xl ${variant.title} font-bold`}>{text}</h3>
-          <p className="text-slate-600 dark:text-lavender-light text-sm">
+        {width < 1536 && width >= 1024 && (
+          <div>
+            <Icon
+              className={`
+            text-[7vw]
+            ${variant.icon}
+            transition-transform duration-500
+            group-hover:scale-110 group-hover:-rotate-6
+        `}
+            />
+          </div>
+        )}
+
+        <div className="flex flex-col 2xl:items-start lg:items-center gap-2">
+          <h3
+            className={`text-[clamp(1.5rem,2vw,2rem)] ${variant.title} font-bold`}
+          >
+            {text}
+          </h3>
+          <p className="text-slate-600 dark:text-lavender-light text-[clamp(0.7rem,0.8vw,1.5rem)] 2xl:text-left lg:text-center">
             {description}
           </p>
         </div>
@@ -128,6 +147,7 @@ const KnowledgeCard = ({
           className={`
             cursor-hover w-fit px-5 py-2
             ${variant.button}
+            text-[clamp(1rem,0.9vw,1.5rem)]
             text-center rounded-full
             font-medium
             transition-all duration-300
@@ -138,16 +158,18 @@ const KnowledgeCard = ({
         </div>
       </div>
 
-      <div>
-        <Icon
-          className={`
-            text-[7vw]
+      {(width >= 1536 || width < 1024) && (
+        <div>
+          <Icon
+            className={`
+            2xl:text-[7vw] text-[17vw]
             ${variant.icon}
             transition-transform duration-500
             group-hover:scale-110 group-hover:-rotate-6
         `}
-        />
-      </div>
+          />
+        </div>
+      )}
     </div>
   );
 };

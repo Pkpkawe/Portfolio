@@ -44,4 +44,40 @@ export const ProjectsData: TProject[] = [
     href: "https://github.com/Hawk-IF",
     status: "development",
   },
+  {
+    id: 3,
+    name: "Hawk If",
+    description:
+      "Um sistema de gerenciamento de salas automatizado que funciona através de sensores colocados em cada sala. Permite ver o status de uma sala, agendar seu uso e gerenciar seus recursos.",
+    type: "IoT",
+    technologies: ["React", "TypeScript", "FastAPI", "Python"],
+    image: HawkIf,
+    size: "small",
+    href: "https://github.com/Hawk-IF",
+    status: "development",
+  },
+  {
+    id: 4,
+    name: "Hawk If",
+    description:
+      "Um sistema de gerenciamento de salas automatizado que funciona através de sensores colocados em cada sala. Permite ver o status de uma sala, agendar seu uso e gerenciar seus recursos.",
+    type: "IoT",
+    technologies: ["React", "TypeScript", "FastAPI", "Python"],
+    image: HawkIf,
+    size: "small",
+    href: "https://github.com/Hawk-IF",
+    status: "development",
+  },
+  {
+    id: 5,
+    name: "Hawk If",
+    description:
+      "Um sistema de gerenciamento de salas automatizado que funciona através de sensores colocados em cada sala. Permite ver o status de uma sala, agendar seu uso e gerenciar seus recursos.",
+    type: "IoT",
+    technologies: ["React", "TypeScript", "FastAPI", "Python"],
+    image: HawkIf,
+    size: "small",
+    href: "https://github.com/Hawk-IF",
+    status: "development",
+  },
 ];

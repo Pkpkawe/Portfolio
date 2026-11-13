@@ -6,7 +6,7 @@ import KnowledgeCard from "../atoms/KnowledgeCard";
 
 const KnowledgeCards = () => {
   return (
-    <div className="grid grid-cols-3 justify-between gap-15">
+    <div className="grid lg:grid-cols-3 grid-cols-1 justify-between gap-15">
       {KnowledgeCardData.map((item) => {
         return (
           <KnowledgeCard
