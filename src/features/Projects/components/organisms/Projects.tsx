@@ -6,6 +6,10 @@ import EmblaCarousel from "@/src/components/molecules/EmblaCarousel";
 
 // React
 import { useState } from "react";
+import { useRef } from "react";
+
+// Hooks
+import useScrollFade from "@/src/hooks/useScrollFade";
 
 // Lucide Icons
 import { Folder, Ghost } from "lucide-react";
@@ -14,6 +18,21 @@ import { Folder, Ghost } from "lucide-react";
 import { ProjectsData } from "../../data/projectsData";
 
 const Projects = () => {
+  const refProjects = useRef<HTMLElement | null>(null);
+
+  useScrollFade(refProjects, {
+    entrance: {
+      opacity: 0,
+      y: 80,
+      scale: 0.97,
+      start: "top 85%",
+      end: "top 55%",
+      scrub: 1,
+    },
+    exit: {
+      enabled: false,
+    },
+  });
   const [activeIndexSmallProject, setActiveIndexSmallProject] = useState(0);
 
   const hasProjects = ProjectsData.length !== 0;
@@ -26,7 +45,11 @@ const Projects = () => {
   const hasProjectLargeAndSmall = hasProjectLarge && hasProjectSmall;
 
   return (
-    <section id="projects" className="w-full flex flex-col gap-15 items-center">
+    <section
+      ref={refProjects}
+      id="projects"
+      className="w-full flex flex-col gap-15 items-center"
+    >
       <Topic Icon={Folder} Title="Projetos" />
 
       <div className="w-9/10 flex flex-col items-center gap-30">

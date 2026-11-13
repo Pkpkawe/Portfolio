@@ -1,6 +1,29 @@
+// React
+import { useRef } from "react";
+
+// Hooks
+import useScrollFade from "@/src/hooks/useScrollFade";
+
 const Header = () => {
+  const refHeader = useRef<HTMLElement | null>(null);
+
+  useScrollFade(refHeader, {
+    entrance: {
+      enabled: false,
+    },
+    exit: {
+      y: -200,
+      opacity: 0,
+      scale: 0.95,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
+    },
+  });
+
   return (
     <header
+      ref={refHeader}
       className="
             min-h-screen w-full
             flex items-center justify-center

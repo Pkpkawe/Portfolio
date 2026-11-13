@@ -9,10 +9,33 @@ import { BookOpen } from "lucide-react";
 // Providers
 import { KnowledgeHoveringProvider } from "../../contexts/KnowledgeHoveringProvider";
 
+// React
+import { useRef } from "react";
+
+// Hooks
+import useScrollFade from "@/src/hooks/useScrollFade";
+
 const Knowledge = () => {
+  const refKnowledge = useRef<HTMLElement | null>(null);
+
+  useScrollFade(refKnowledge, {
+    entrance: {
+      opacity: 0,
+      y: 80,
+      scale: 0.97,
+      start: "top 85%",
+      end: "top 55%",
+      scrub: 1,
+    },
+    exit: {
+      enabled: false,
+    },
+  });
+
   return (
     <KnowledgeHoveringProvider>
       <section
+        ref={refKnowledge}
         id="knowledge"
         className="w-full flex flex-col gap-15 items-center"
       >

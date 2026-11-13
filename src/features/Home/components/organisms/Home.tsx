@@ -10,14 +10,37 @@ import { User } from "lucide-react";
 // UseHookTs
 import { useWindowSize } from "usehooks-ts";
 
+// React
+import { useRef } from "react";
+
+// Hooks
+import useScrollFade from "@/src/hooks/useScrollFade";
+
 const LinkClassName =
   "font-medium md:text-[clamp(1rem,1vw,3rem)] text-[clamp(0.9rem,1vw,3rem)] cursor-pointer w-1/2 p-4 rounded-2xl hover:scale-102 transition-all text-center no-underline border-2 shadow-md hover:shadow-xl";
 
 const Home = () => {
   const { width } = useWindowSize();
 
+  const refHome = useRef<HTMLElement | null>(null);
+
+  useScrollFade(refHome, {
+    entrance: {
+      opacity: 0,
+      y: 80,
+      scale: 0.95,
+      start: "top 85%",
+      end: "top 55%",
+      scrub: 1,
+    },
+    exit: {
+      enabled: false,
+    },
+  });
+
   return (
     <section
+      ref={refHome}
       id="home"
       className="w-9/10 flex 2xl:flex-row flex-col items-center gap-15"
     >

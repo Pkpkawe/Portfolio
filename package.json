@@ -15,22 +15,18 @@
   "dependencies": {
     "@fontsource/intel-one-mono": "^5.3.0",
     "@gsap/react": "^2.1.2",
-    "@hookform/resolvers": "^5.9.1",
     "@tailwindcss/vite": "^4.3.3",
-    "@tanstack/react-query": "^5.104.0",
     "axios": "^1.20.0",
-    "cmdk": "^1.1.1",
     "css-mesh": "^0.7.1",
     "embla-carousel-react": "^8.6.0",
     "gsap": "^3.15.1",
     "lucide-react": "^1.48.0",
+    "motion": "^14.13.0",
     "radix-ui": "^1.6.7",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-hook-form": "^7.89.0",
     "tailwindcss": "^4.3.3",
-    "usehooks-ts": "^3.1.1",
-    "zod": "^4.6.5"
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

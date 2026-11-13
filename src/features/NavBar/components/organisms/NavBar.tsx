@@ -44,7 +44,7 @@ const NavBar = () => {
   useEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > lastScrollY.current && currentScrollY > 600) {
+    if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
       setIsVisibleFalse();
       setIsVisibleLittleMenuFalse();
     } else {
@@ -55,7 +55,7 @@ const NavBar = () => {
   });
 
   useEventListener("mousemove", (event) => {
-    if (event.clientY <= 50) {
+    if (event.clientY <= 50 && !isVisible) {
       setIsVisibleTrue();
     }
   });
