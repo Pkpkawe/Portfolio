@@ -22,7 +22,7 @@ const Footer = () => {
         "
     >
       <div className="w-full flex md:flex-row flex-col justify-between gap-14">
-        <div className="flex gap-10 md:justify-start justify-between">
+        <div className="flex xl:gap-20 gap-10 md:justify-start justify-between">
           <InfoBlock
             name="contatos"
             infos={[
