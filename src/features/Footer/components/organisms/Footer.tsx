@@ -34,7 +34,7 @@ const Footer = () => {
               {
                 text: "DISCORD",
                 Icon: Discord,
-                href: "https://discord.gg/seu-convite",
+                href: "https://discord.gg/ymx4nWJCXn",
               },
             ]}
           />
@@ -44,22 +44,22 @@ const Footer = () => {
               {
                 text: "INSTAGRAM",
                 Icon: Instagram,
-                href: "https://instagram.com/seuuser",
+                href: "https://instagram.com/pkpkawe",
               },
               {
                 text: "YOUTUBE",
                 Icon: Youtube,
-                href: "https://youtube.com/@seucanal",
+                href: "https://youtube.com/@Pkpkawe",
               },
               {
                 text: "TWITCH",
                 Icon: Twitch,
-                href: "https://twitch.tv/seuuser",
+                href: "https://twitch.tv/pkpkawe",
               },
               {
                 text: "LINKEDIN",
                 Icon: Linkedin,
-                href: "https://linkedin.com/in/seuuser",
+                href: "https://linkedin.com/in/pkpkawe",
               },
             ]}
           />
@@ -69,12 +69,12 @@ const Footer = () => {
               {
                 text: "GITHUB",
                 Icon: GitHub,
-                href: "https://github.com/seuuser",
+                href: "https://github.com/Pkpkawe",
               },
               {
                 text: "GITLAB",
                 Icon: GitLab,
-                href: "https://gitlab.com/seuuser",
+                href: "https://gitlab.com/Pkpkawe",
               },
             ]}
           />
