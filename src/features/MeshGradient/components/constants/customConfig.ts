@@ -1,6 +1,12 @@
 // CSS Mesh
 import type { BackgroundConfig } from "css-mesh";
 
+const LIGHT_GRADIENT =
+  "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(111, 69, 221, 0.25) 0%, rgba(59.77, 37.15, 119, 0) 100%)";
+
+const DARK_GRADIENT =
+  "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(212, 181, 248, 0.15) 0%, rgba(124.81, 106.56, 146, 0) 100%)";
+
 export const customLightConfig: BackgroundConfig = {
   backgroundColor: "transparent",
   shapes: [
@@ -10,8 +16,7 @@ export const customLightConfig: BackgroundConfig = {
       height: 65,
       x: -15,
       y: -20,
-      gradient:
-        "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(111, 69, 221, 0.17) 0%, rgba(59.77, 37.15, 119, 0) 100%)",
+      gradient: LIGHT_GRADIENT,
       blur: 0,
       opacity: 0.7,
       zIndex: 1,
@@ -23,8 +28,7 @@ export const customLightConfig: BackgroundConfig = {
       height: 70,
       x: 35,
       y: -25,
-      gradient:
-        "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(111, 69, 221, 0.17) 0%, rgba(59.77, 37.15, 119, 0) 100%)",
+      gradient: LIGHT_GRADIENT,
       blur: 0,
       opacity: 0.7,
       zIndex: 2,
@@ -36,8 +40,7 @@ export const customLightConfig: BackgroundConfig = {
       height: 75,
       x: 5,
       y: 35,
-      gradient:
-        "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(111, 69, 221, 0.17) 0%, rgba(59.77, 37.15, 119, 0) 100%)",
+      gradient: LIGHT_GRADIENT,
       blur: 0,
       opacity: 0.7,
       zIndex: 3,
@@ -49,8 +52,7 @@ export const customLightConfig: BackgroundConfig = {
       height: 60,
       x: 65,
       y: 35,
-      gradient:
-        "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(111, 69, 221, 0.17) 0%, rgba(59.77, 37.15, 119, 0) 100%)",
+      gradient: LIGHT_GRADIENT,
       blur: 0,
       opacity: 0.7,
       zIndex: 4,
@@ -68,8 +70,7 @@ export const customDarkConfig: BackgroundConfig = {
       height: 65,
       x: -15,
       y: -20,
-      gradient:
-        "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(212, 181, 248, 0.08) 0%, rgba(124.81, 106.56, 146, 0) 100%)",
+      gradient: DARK_GRADIENT,
       blur: 0,
       opacity: 0.7,
       zIndex: 1,
@@ -81,8 +82,7 @@ export const customDarkConfig: BackgroundConfig = {
       height: 70,
       x: 35,
       y: -25,
-      gradient:
-        "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(212, 181, 248, 0.08) 0%, rgba(124.81, 106.56, 146, 0) 100%)",
+      gradient: DARK_GRADIENT,
       blur: 0,
       opacity: 0.7,
       zIndex: 2,
@@ -94,8 +94,7 @@ export const customDarkConfig: BackgroundConfig = {
       height: 75,
       x: 5,
       y: 35,
-      gradient:
-        "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(212, 181, 248, 0.08) 0%, rgba(124.81, 106.56, 146, 0) 100%)",
+      gradient: DARK_GRADIENT,
       blur: 0,
       opacity: 0.7,
       zIndex: 3,
@@ -107,8 +106,7 @@ export const customDarkConfig: BackgroundConfig = {
       height: 60,
       x: 65,
       y: 35,
-      gradient:
-        "radial-gradient(ellipse 50.00% 50.00% at 50.00% 50.00%, rgba(212, 181, 248, 0.08) 0%, rgba(124.81, 106.56, 146, 0) 100%)",
+      gradient: DARK_GRADIENT,
       blur: 0,
       opacity: 0.7,
       zIndex: 4,

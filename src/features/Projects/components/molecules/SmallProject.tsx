@@ -50,7 +50,7 @@ const SmallProject = ({
             <h3 className="text-[clamp(1.2rem,1.2vw,2rem)] font-semibold text-shadow-mauve-shadow dark:text-lavender-light">
               {name}
             </h3>
-            <Bedge text={type} variant="iris-light" />
+            <Bedge text={type} variant="indigo-soft" />
           </div>
           <ProjectStatus status={status} />
         </div>

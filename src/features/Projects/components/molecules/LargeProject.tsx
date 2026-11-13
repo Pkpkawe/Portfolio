@@ -121,7 +121,7 @@ const LargeProject = ({
 
         <div className="w-full flex lg:flex-col flex-row-reverse lg:items-start items-end justify-between gap-6">
           <div className="lg:w-full h-fit flex justify-between gap-5">
-            <Bedge text={type} variant="iris-soft" />
+            <Bedge text={type} variant="indigo-soft" />
             <ProjectStatus status={status} />
           </div>
           <div className="flex flex-col gap-2">
