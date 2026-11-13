@@ -84,7 +84,7 @@ const Footer = () => {
           <p
             className="
                         relative inline-block
-                        text-[clamp(0.8rem,0.9vw,2rem)] font-monocraft px-5 py-2
+                        text-[clamp(0.8rem,0.8vw,2rem)] font-monocraft px-5 py-2
                         text-indigo-shadow dark:text-lavender-light
                         before:absolute before:top-0 before:left-0 before:w-3.5 before:h-3.5 before:border-t-4 before:border-l-4 before:border-violet-night dark:before:border-violet-light
                         after:absolute after:bottom-0 after:right-0 after:w-3.5 after:h-3.5 after:border-b-4 after:border-r-4 after:border-violet-night dark:after:border-violet-light

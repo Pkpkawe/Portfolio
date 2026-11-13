@@ -16,7 +16,7 @@ const NavigationMenu = () => {
             <NavigationMenuRadix.Link
               href={link.href}
               className="
-                                font-medium text-[clamp(0.9rem,1vw,1.5rem)]
+                                font-medium text-[clamp(0.9rem,0.9vw,1.5rem)]
                                 text-indigo-shadow dark:text-lavender-light 
                                 group-hover:text-violet-normal group-hover:dark:text-white
                             "

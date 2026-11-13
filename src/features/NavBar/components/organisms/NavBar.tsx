@@ -116,7 +116,7 @@ const NavBar = () => {
               w-4/5 py-2 px-10 mt-5
               border border-indigo-shadow dark:border-lavender-light rounded-2xl
               shadow-md transition-all
-              ${finalVisibility ? "translate-y-0" : "-translate-y-full mt-0!"}
+              ${finalVisibility ? "translate-y-0 scale-100" : "scale-50 -translate-y-[calc(100%+10px)] mt-0!"}
           `}
       >
         <Avatar />
